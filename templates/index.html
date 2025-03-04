@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ottoman AI - The AI Chef</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="quick-replies">
+            <button onclick="sendMessage('Give me a pizza recipe 🍕')">🍕 Pizza Recipe</button>
+            <button onclick="sendMessage('What are healthy meal ideas? 🥗')">🥗 Healthy Meals</button>
+            <button onclick="sendMessage('Tell me smoothie tips 🥤')">🥤 Smoothie Tips</button>
+            <button onclick="sendMessage('Share nutrition facts 📊')">📊 Nutrition Facts</button>
+        </div>
+
+        <!-- Chat box -->
+        <div class="chat-box" id="chat-box"></div>
+
+        <!-- Typing Indicator (hidden by default) -->
+        <div id="typing-indicator" class="typing-indicator hidden">
+            Ottoman AI is typing<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>
+        </div>
+
+        <!-- User Input Form -->
+        <form id="chat-form" onsubmit="handleSubmit(event)">
+            <div class="input-group">
+                <input type="text" id="user-message" placeholder="Ask Ottoman AI anything..." required autocomplete="off">
+                <button type="submit">Send</button>
+            </div>
+        </form>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button class="styled-btn" onclick="resetChat()">Reset Chat</button>
+            <button class="styled-btn" onclick="continueChat()">Continue</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
